@@ -14,6 +14,7 @@ import { ChevronDownIcon, ChevronRightIcon, CloseIcon, HamburgerIcon } from "@ch
 import { SiMedibangpaint } from "react-icons/si";
 import { DesktopNav, MobileNav } from "./Navs";
 import { IUser } from "../types";
+import LogoImg from "./Logo";
 
 export default function Header() {
     const getToken = (): string | null => {
@@ -74,7 +75,7 @@ export default function Header() {
                     <HStack spacing={8} color={logoColor} alignItems={'center'}>
                         <Box >
                             <Link to={"/"}>
-                                <SiMedibangpaint />
+                                <LogoImg />
                             </Link>
                         </Box>
                         {
@@ -87,7 +88,6 @@ export default function Header() {
                                     (
                                         <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
                                             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-                                                {/* <DesktopNav user={testLogInUser} /> */}
                                                 <DesktopNav user={user} />
                                             </Flex>
                                         </HStack>
