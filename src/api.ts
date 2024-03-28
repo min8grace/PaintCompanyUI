@@ -3,9 +3,13 @@ import axios from "axios";
 import { IUser } from "./types";
 
 const instance = axios.create({
-    baseURL: "http://paintstockstatusapi-dev-env.eba-3mmsvjmk.us-west-2.elasticbeanstalk.com/"
-    //baseURL: "https://localhost:5001/"
+    baseURL:
+        process.env.NODE_ENV === "development" ?
+            "https://localhost:5001/" :
+            "https://backend.gracewaychurch.xyz/",
+    withCredentials: true,
 })
+
 
 // Function to get the stored token from localStorage
 const getToken = (): string | null => {
